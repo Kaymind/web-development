@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.swal2-cancel, .swal2-confirm {
+  margin: 8px !important;
+  padding: 20px !important;
+}
+
+.swal2-popup, .swal2-modal, .swal2-show {
+font-size: initial !important;
+}

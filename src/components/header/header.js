@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions/login.action";
+import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -8,11 +11,12 @@ class Header extends Component {
         <a href="index2.html" className="logo">
           {/* mini logo for sidebar mini 50x50 pixels */}
           <span className="logo-mini">
-            <b>A</b>LT
+            <b>CM</b>POS
           </span>
           {/* logo for regular state and mobile devices */}
           <span className="logo-lg">
-            <b>Admin</b>LTE
+            <b>CMPOS</b>
+            {process.env.REACT_APP_VERSION}
           </span>
         </a>
         {/* Header Navbar: style can be found in header.less */}
@@ -340,7 +344,10 @@ class Header extends Component {
                       </a>
                     </div>
                     <div className="pull-right">
-                      <a href="#" className="btn btn-default btn-flat">
+                      <a
+                        onClick={() => this.props.logout(this.props.history)}
+                        className="btn btn-default btn-flat"
+                      >
                         Sign out
                       </a>
                     </div>
@@ -361,4 +368,13 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = {
+  ...actions
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Header));

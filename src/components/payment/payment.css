@@ -1,0 +1,99 @@
+.nprice_tag2{
+    
+    font-size: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+    vertical-align: top;
+    color: #414141;
+    line-height: 13px;
+  
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+  
+  .nprice_tag_selected2{
+    position: absolute;
+    font-size: 10px;
+    bottom: -10px;
+    left: 0px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: #f00410;
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+  .note_button {
+    display: flex; flex: 1;
+    justify-content: center;    
+    border-radius: 10px;
+    font-size: 20px;
+    color: #707070;
+    background: #f4f4f4; 
+    border: 1px solid #0000001a;     
+    height: 60px;
+    line-height: 60px;
+    margin: 8px;
+    font-weight: 3px;
+    transition: 0.3s; 
+  }
+
+
+  .note_button:hover {
+    display: flex; flex: 1;
+    justify-content: center;    
+    border-radius: 10px;
+    font-size: 20px;
+    color: #707070;
+    background: #f4f4f4; 
+    border: 1px solid #0000001a;     
+    height: 60px;
+    line-height: 60px;
+    width: 160px;    
+    margin: 8px;
+    font-weight: 3px;
+    text-align:center;
+    box-shadow: 0 4px 8px 0 rgba(255, 196, 0, 0.9);
+    transition: 0.3s; 
+  }
+
+  .payment_button {
+    display: flex; flex: 1;
+    justify-content: center;    
+    border-radius: 10px;
+    font-size: 20px;
+    color: #707070;
+    background: #212121; 
+    border: 1px solid #0000001a;     
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    width: 160px;    
+    margin: 8px;
+    font-weight: 3px;
+    text-align:center;
+  }
+
+  .payment_button:hover{
+    background: #212121; 
+    border: 1px solid #0000001a;     
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    width: 160px;    
+    margin: 8px;
+    font-weight: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 255, 128, 0.9);
+    text-align:center;
+  }
+
+.currencyinput {
+    
+    padding-top: 0px;
+    border: 1px inset #ccc;
+}
+.currencyinput input {
+    color: red;
+    border: 0;        
+}

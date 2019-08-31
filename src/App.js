@@ -10,12 +10,15 @@ import Stock from "./components/stock/stock";
 import Shop from "./components/shop/shop";
 import Report from "./components/report/report";
 import Transaction from "./components/transaction/transaction";
+import "./App.css"
 
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { server } from './constants'
+import { connect } from 'react-redux';
 
 //isLoggedIn
 const isLoggedIn = () => {
-  return true
+  return localStorage.getItem(server.TOKEN_KEY) != null
 }
 
 // Protected Route
@@ -32,7 +35,7 @@ const SecuredRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-export default class App extends Component{
+class App extends Component{
 
   redirectToLogin = () => {
     return <Redirect to="/login" />
@@ -40,7 +43,7 @@ export default class App extends Component{
 
   render() {
     return (
-      <Router basename="">
+      <Router basename={process.env.REACT_APP_IS_PRODUCTION == 1 ? "/demo" : ""}>
         <div>
           {isLoggedIn() && <Header />}
           {isLoggedIn() && <Menu />}
@@ -59,3 +62,12 @@ export default class App extends Component{
     );
   }
 }
+
+const mapStateToProps = ({loginReducer}) => ({
+  loginReducer
+})
+
+const mapDispatchToProps = {
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
